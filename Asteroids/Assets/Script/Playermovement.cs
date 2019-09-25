@@ -26,12 +26,26 @@ public class Playermovement : MonoBehaviour
         thrustInput = Input.GetAxis("Vertical");
         turnInput = Input.GetAxis("Horizontal");
 
-        //screen wraping
+        //zo dat je niet uit de map vlieg
         Vector2 newPos = transform.position;
         if (transform.position.y > screentop)
         {
             newPos.y = screendown;
         }
+        if (transform.position.y < screendown)
+        {
+            newPos.y = screentop;
+        }
+        if (transform.position.x > screenright)
+        {
+            newPos.x = screenleft;
+        }
+        if (transform.position.x < screenleft)
+        {
+            newPos.x = screenright;
+        }
+
+        transform.position = newPos;
     }
 
     private void FixedUpdate()
