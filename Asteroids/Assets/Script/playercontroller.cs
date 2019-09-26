@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Playermovement : MonoBehaviour
+public class playercontroller : MonoBehaviour
 {
 
     // roep de rigibody aan
@@ -20,11 +20,23 @@ public class Playermovement : MonoBehaviour
     public float screenleft;
     public float screenright;
 
+    //schieten
+    public GameObject  bullet;
+    public float bulletforce;
+
     // Update is called once per frame
     void Update()
     {
         thrustInput = Input.GetAxis("Vertical");
         turnInput = Input.GetAxis("Horizontal");
+
+        //check input van de vuur knop en maak kogels aan
+        if (Input.GetButtonDown("Fire1"))
+        {
+            GameObject newbullet = Instantiate(bullet, transform.position, transform.rotation);
+            newbullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * bulletforce);
+            Destroy(newbullet, 5.0f);
+        }
 
         //zo dat je niet uit de map vlieg
         Vector2 newPos = transform.position;

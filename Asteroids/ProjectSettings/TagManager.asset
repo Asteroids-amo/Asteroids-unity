@@ -6,6 +6,7 @@ TagManager:
   tags:
   - background
   - player
+  - shoot
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - background
   - player
-  - 
+  - laser
   - 
   - 
   - 
@@ -48,4 +49,7 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 3778015375
+    locked: 0
+  - name: laser
+    uniqueID: 2209967307
     locked: 0
