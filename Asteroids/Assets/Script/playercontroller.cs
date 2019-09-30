@@ -35,7 +35,7 @@ public class playercontroller : MonoBehaviour
         {
             GameObject newbullet = Instantiate(bullet, transform.position, transform.rotation);
             newbullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * bulletforce);
-            Destroy(newbullet, 5.0f);
+            Destroy(newbullet, 7.0f);
         }
 
         //zo dat je niet uit de map vlieg
