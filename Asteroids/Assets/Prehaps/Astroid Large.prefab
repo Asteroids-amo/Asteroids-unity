@@ -139,3 +139,8 @@ MonoBehaviour:
   screendown: -7
   screenleft: -12
   screenright: 12
+  astroidSize: 0
+  astroidMedium: {fileID: 2349116615146523768, guid: 62ff98a7c17b79a47a489c6e9fa78066,
+    type: 3}
+  astroidSmall: {fileID: 8146765666375013220, guid: b32d085f4603e134bb15dad1a02fbd42,
+    type: 3}
