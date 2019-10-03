@@ -132,14 +132,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a972fa42aa3a8bc4ab93758dcda8d3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxThrust: 100
-  maxTorque: 100
+  maxThrust: 150
+  maxTorque: 150
   rb: {fileID: 546716006866181012}
   screentop: 7
   screendown: -7
   screenleft: -12
   screenright: 12
-  astroidSize: 0
+  astroidSize: 3
   astroidMedium: {fileID: 2349116615146523768, guid: 62ff98a7c17b79a47a489c6e9fa78066,
     type: 3}
   astroidSmall: {fileID: 8146765666375013220, guid: b32d085f4603e134bb15dad1a02fbd42,

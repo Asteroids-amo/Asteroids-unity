@@ -270,84 +270,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 607001767451511180, guid: b32d085f4603e134bb15dad1a02fbd42,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.81365
-      objectReference: {fileID: 0}
-    - target: {fileID: 607001767451511180, guid: b32d085f4603e134bb15dad1a02fbd42,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.596
-      objectReference: {fileID: 0}
+    - target: {fileID: 706003253, guid: b32d085f4603e134bb15dad1a02fbd42, type: 3}
+      propertyPath: astroidMedium
+      value: 
+      objectReference: {fileID: 2044935449}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b32d085f4603e134bb15dad1a02fbd42, type: 3}
---- !u!1 &706003252 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8146765666375013220, guid: b32d085f4603e134bb15dad1a02fbd42,
-    type: 3}
-  m_PrefabInstance: {fileID: 706003251}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &706003253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706003252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a972fa42aa3a8bc4ab93758dcda8d3cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxThrust: 5
-  maxTorque: 5
-  rb: {fileID: 706003255}
-  screentop: 7
-  screendown: -7
-  screenleft: -12
-  screenright: 12
-  astroidSize: 1
-  astroidMedium: {fileID: 2044935449}
-  astroidSmall: {fileID: 8146765666375013220, guid: b32d085f4603e134bb15dad1a02fbd42,
-    type: 3}
---- !u!58 &706003254
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706003252}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.14
---- !u!50 &706003255
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706003252}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.20254096
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1092188844
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +588,7 @@ PrefabInstance:
     - target: {fileID: 546716006866181019, guid: df7591f47b76af443a62be70c77e4beb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.13
+      value: -3.64
       objectReference: {fileID: 0}
     - target: {fileID: 546716006866181019, guid: df7591f47b76af443a62be70c77e4beb,
         type: 3}
@@ -711,18 +639,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149608666, guid: df7591f47b76af443a62be70c77e4beb, type: 3}
-      propertyPath: maxThrust
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149608666, guid: df7591f47b76af443a62be70c77e4beb, type: 3}
-      propertyPath: maxTorque
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149608666, guid: df7591f47b76af443a62be70c77e4beb, type: 3}
-      propertyPath: astroidSize
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df7591f47b76af443a62be70c77e4beb, type: 3}
