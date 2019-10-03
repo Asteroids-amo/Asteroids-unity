@@ -24,6 +24,9 @@ public class playercontroller : MonoBehaviour
     public GameObject  bullet;
     public float bulletforce;
 
+    //ship leven
+    public float deathforce;
+
     // Update is called once per frame
     void Update()
     {
@@ -37,6 +40,9 @@ public class playercontroller : MonoBehaviour
             newbullet.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * bulletforce);
             Destroy(newbullet, 7.0f);
         }
+
+        //rotatie schip
+        transform.Rotate(Vector3.forward * turnInput * Time.deltaTime * -turnThrust);
 
         //zo dat je niet uit de map vlieg
         Vector2 newPos = transform.position;
@@ -63,6 +69,16 @@ public class playercontroller : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddRelativeForce(Vector2.up * thrustInput);
-        rb.AddTorque(-turnInput); 
+       //rb.AddTorque(-turnInput); 
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log(col.relativeVelocity.magnitude);
+
+        if (col.relativeVelocity.magnitude > deathforce)
+        {
+            Debug.Log("death");
+        }
     }
 }

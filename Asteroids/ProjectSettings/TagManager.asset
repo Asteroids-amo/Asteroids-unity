@@ -7,6 +7,7 @@ TagManager:
   - background
   - player
   - shoot
+  - astroid
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - 
   - background
   - player
-  - laser
-  - 
+  - laster
+  - astroid
   - 
   - 
   - 
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: laser
     uniqueID: 2209967307
+    locked: 0
+  - name: astroid
+    uniqueID: 3795592813
     locked: 0
