@@ -28,8 +28,6 @@ public class Astroid : MonoBehaviour
 
         rb.AddForce(thrust);
         rb.AddTorque(torque);
-
-        astroidSize = 3; // grote astroied
     }
 
     // Update is called once per frame
