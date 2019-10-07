@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -499374483
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b0482c13047d0ec4a9eec050cf11f1a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -142,3 +142,4 @@ MonoBehaviour:
   astroidSize: 1
   astroidMedium: {fileID: 0}
   astroidSmall: {fileID: 8146765666375013220}
+  explosion: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00, type: 3}

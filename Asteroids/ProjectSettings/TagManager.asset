@@ -4,10 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - background
-  - player
+  - Shootable
+  - Undefined
   - shoot
-  - astroid
   layers:
   - Default
   - TransparentFX
@@ -17,10 +16,10 @@ TagManager:
   - UI
   - 
   - 
-  - background
-  - player
-  - laster
-  - astroid
+  - Lighting
+  - Ground
+  - Postprocessing
+  - 
   - 
   - 
   - 
@@ -45,15 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: background
-    uniqueID: 2311287301
+  - name: Fire
+    uniqueID: 3804908061
     locked: 0
   - name: player
-    uniqueID: 3778015375
+    uniqueID: 3305137355
     locked: 0
-  - name: laser
-    uniqueID: 2209967307
+  - name: astroied
+    uniqueID: 4219040587
     locked: 0
-  - name: astroid
-    uniqueID: 3795592813
+  - name: Big ban
+    uniqueID: 3064005633
     locked: 0

@@ -19,6 +19,9 @@ public class Astroid : MonoBehaviour
     public GameObject astroidMedium;
     public GameObject astroidSmall;
 
+    //special effect wanneer de astroied wordt vernietigt
+    public GameObject explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +82,10 @@ public class Astroid : MonoBehaviour
                 //vernietig de astroide
             }
 
+
+            // maakt een explosion 
+            GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(newExplosion, 3f);
             //vernietig nu astroide
             Destroy(gameObject);
         }
