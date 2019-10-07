@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playercontroller : MonoBehaviour
 {
@@ -21,11 +22,22 @@ public class playercontroller : MonoBehaviour
     public float screenright;
 
     //schieten
-    public GameObject  bullet;
+    public GameObject bullet;
     public float bulletforce;
 
     //ship leven
     public float deathforce;
+    public int lives;
+    public Text livestext;
+
+    // Use this for intialization
+    private void Start()
+    {
+
+        // update de leven text
+        livestext.text = "Lives X" + lives;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -69,7 +81,7 @@ public class playercontroller : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddRelativeForce(Vector2.up * thrustInput);
-       //rb.AddTorque(-turnInput); 
+        //rb.AddTorque(-turnInput); 
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -78,7 +90,12 @@ public class playercontroller : MonoBehaviour
 
         if (col.relativeVelocity.magnitude > deathforce)
         {
-            Debug.Log("death");
+            lives--;
+            livestext.text = "Lives X" + lives;
+            if (lives <= 0)
+            {
+                //gameover
+            }
         }
     }
 }
