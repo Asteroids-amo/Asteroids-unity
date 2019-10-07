@@ -29,6 +29,9 @@ public class playercontroller : MonoBehaviour
     public float deathforce;
     public int lives;
     public Text livestext;
+    public GameObject explosion;
+    public Color inColor;
+    public Color normalColor;
 
     // Use this for intialization
     private void Start()
@@ -84,6 +87,24 @@ public class playercontroller : MonoBehaviour
         //rb.AddTorque(-turnInput); 
     }
 
+    void Respawn()
+    {
+        rb.velocity = Vector2.zero;
+        transform.position = Vector2.zero;
+
+       SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.enabled = true;
+        sr.color = inColor;
+        Invoke("Invulnerable", 3f);
+    }
+
+
+    void Invulnerable()
+    {
+        GetComponent<Collider2D>().enabled = true;
+        GetComponent<SpriteRenderer>().color = normalColor;
+    }
+
     private void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log(col.relativeVelocity.magnitude);
@@ -91,7 +112,14 @@ public class playercontroller : MonoBehaviour
         if (col.relativeVelocity.magnitude > deathforce)
         {
             lives--;
+            GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(newExplosion, 3f);
             livestext.text = "Lives X" + lives;
+            //respwan wanneer je dood ben
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Collider2D>().enabled = false;
+            Invoke("Respawn", 3f);
+
             if (lives <= 0)
             {
                 //gameover
