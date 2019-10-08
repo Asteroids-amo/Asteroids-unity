@@ -37,8 +37,6 @@ public class playercontroller : MonoBehaviour
     public Color inColor;
     public Color normalColor;
 
-    public int score;
-    public Text scoretext;
     //gameover
     public GameObject gameoverpanal;
 
@@ -48,8 +46,6 @@ public class playercontroller : MonoBehaviour
         score = 0;
         // update de leven text
         livestext.text = "Lives X" + lives;
-        scoretext.text = "Score " + score; 
-
     }
 
 
@@ -121,11 +117,6 @@ public class playercontroller : MonoBehaviour
         GetComponent<SpriteRenderer>().color = normalColor;
     }
 
-    void ScorePoints(int pointsToAdd)
-    {
-        score += pointsToAdd;
-        scoretext.text = "score " + score;
-    }
     private void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log(col.relativeVelocity.magnitude);
