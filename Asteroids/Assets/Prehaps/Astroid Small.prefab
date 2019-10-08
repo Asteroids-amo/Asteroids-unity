@@ -142,4 +142,7 @@ MonoBehaviour:
   astroidSize: 1
   astroidMedium: {fileID: 0}
   astroidSmall: {fileID: 8146765666375013220}
+  points: 50
+  player: {fileID: 0}
   explosion: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00, type: 3}
+  gm: {fileID: 0}

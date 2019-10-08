@@ -19,6 +19,9 @@ public class Astroid : MonoBehaviour
     public GameObject astroidMedium;
     public GameObject astroidSmall;
 
+    public int points;
+    public GameObject player;
+
     //special effect wanneer de astroied wordt vernietigt
     public GameObject explosion;
 
@@ -37,6 +40,9 @@ public class Astroid : MonoBehaviour
 
         //zoek de script gamemager
         gm = GameObject.FindObjectOfType<GameManager>();
+
+        // find the player
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -93,12 +99,14 @@ public class Astroid : MonoBehaviour
                 gm.updateNumberOfAstroied(-1);
             }
 
-
+            // tell the player to score some points
+                player.SendMessage("ScorePoints",points);
             // maakt een explosion 
             GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation);
             Destroy(newExplosion, 3f);
             //vernietig nu astroide
             Destroy(gameObject);
+
         }
 
     }

@@ -34,15 +34,20 @@ public class playercontroller : MonoBehaviour
     public Color inColor;
     public Color normalColor;
 
+    public int score;
+    public Text scoretext;
     //gameover
     public GameObject gameoverpanal;
 
     // Use this for intialization
     private void Start()
     {
+        score = 0;
 
-        // update de leven text
+        // update de leven en score text
         livestext.text = "Lives X" + lives;
+        scoretext.text = "Score " + score; 
+
     }
 
 
@@ -90,7 +95,6 @@ public class playercontroller : MonoBehaviour
         rb.AddRelativeForce(Vector2.up * thrustInput);
         //rb.AddTorque(-turnInput); 
     }
-
     void Respawn()
     {
         rb.velocity = Vector2.zero;
@@ -109,6 +113,11 @@ public class playercontroller : MonoBehaviour
         GetComponent<SpriteRenderer>().color = normalColor;
     }
 
+    void ScorePoints(int pointsToAdd)
+    {
+        score += pointsToAdd;
+        scoretext.text = "score " + score;
+    }
     private void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log(col.relativeVelocity.magnitude);
