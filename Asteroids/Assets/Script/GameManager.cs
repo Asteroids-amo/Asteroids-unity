@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     //telt hoeveel astroied je hebt in je scene
     public int numberOfAstroied;
     public int levelnummber = 1;
-    public GameObject asteroid;
+    public GameObject asteroidlarge;
+    public GameObject astroidmedium;
+    public GameObject astroidsmall;
 
     public void updateNumberOfAstroied(int change)
     {
@@ -26,7 +28,21 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < levelnummber*2; i++)
         {
             Vector2 spawn = new Vector2(Random.Range(-12f, 12f),7f);
-            Instantiate(asteroid,spawn,Quaternion.identity);
+            Instantiate(asteroidlarge,spawn,Quaternion.identity);
+            numberOfAstroied++;
+        }
+
+        for (int i = 0; i < levelnummber*1; i++)
+        {
+            Vector2 spawn = new Vector2(Random.Range(-12f, 12f), 7f);
+            Instantiate(astroidmedium, spawn, Quaternion.identity);
+            numberOfAstroied++;
+        }
+
+        for (int i = 0; i < levelnummber * 3; i++)
+        {
+            Vector2 spawn = new Vector2(Random.Range(-12f, 12f), 7f);
+            Instantiate(astroidsmall, spawn, Quaternion.identity);
             numberOfAstroied++;
         }
     }
