@@ -835,6 +835,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfAstroied: 2
+  levelnummber: 1
+  asteroidlarge: {fileID: 546716006866181017, guid: df7591f47b76af443a62be70c77e4beb,
+    type: 3}
+  astroidmedium: {fileID: 2349116615146523768, guid: 62ff98a7c17b79a47a489c6e9fa78066,
+    type: 3}
+  astroidsmall: {fileID: 8146765666375013220, guid: b32d085f4603e134bb15dad1a02fbd42,
+    type: 3}
 --- !u!4 &1507739233
 Transform:
   m_ObjectHideFlags: 0
@@ -1348,7 +1355,7 @@ MonoBehaviour:
   bullet: {fileID: 8046585210038661977, guid: 4f06947fb82f4a34a86c4e8efcb03739, type: 3}
   bulletforce: 200
   deathforce: 2
-  lives: 1
+  lives: 3
   livestext: {fileID: 2078427920}
   explosion: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
   inColor: {r: 1, g: 1, b: 1, a: 0.29411766}
@@ -1560,12 +1567,12 @@ PrefabInstance:
     - target: {fileID: 546716006866181019, guid: df7591f47b76af443a62be70c77e4beb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.51
+      value: -4.45
       objectReference: {fileID: 0}
     - target: {fileID: 546716006866181019, guid: df7591f47b76af443a62be70c77e4beb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.89
+      value: 4.11
       objectReference: {fileID: 0}
     - target: {fileID: 546716006866181019, guid: df7591f47b76af443a62be70c77e4beb,
         type: 3}
