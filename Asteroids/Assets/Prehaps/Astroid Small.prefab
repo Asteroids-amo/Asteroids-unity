@@ -135,10 +135,10 @@ MonoBehaviour:
   maxThrust: 5
   maxTorque: 5
   rb: {fileID: 706003255}
-  screentop: 7
-  screendown: -7
-  screenleft: -12
-  screenright: 12
+  screentop: 6
+  screendown: -6
+  screenleft: -11
+  screenright: 11
   astroidSize: 1
   astroidMedium: {fileID: 0}
   astroidSmall: {fileID: 8146765666375013220}

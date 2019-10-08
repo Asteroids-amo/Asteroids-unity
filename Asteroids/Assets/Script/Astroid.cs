@@ -22,6 +22,9 @@ public class Astroid : MonoBehaviour
     //special effect wanneer de astroied wordt vernietigt
     public GameObject explosion;
 
+    //gamemanager
+    public GameManager gm;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,9 @@ public class Astroid : MonoBehaviour
 
         rb.AddForce(thrust);
         rb.AddTorque(torque);
+
+        //zoek de script gamemager
+        gm = GameObject.FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -70,16 +76,21 @@ public class Astroid : MonoBehaviour
                 //split het naar 2 dus medium astroide
                 Instantiate(astroidMedium, transform.position, transform.rotation);
                 Instantiate(astroidMedium, transform.position, transform.rotation);
+
+                gm.updateNumberOfAstroied(1);
             }
             else if(astroidSize == 2)
             {
                 //split het naar 2 dus kleine astroide
                 Instantiate(astroidSmall, transform.position, transform.rotation);
                 Instantiate(astroidSmall, transform.position, transform.rotation);
+
+                gm.updateNumberOfAstroied(1);
             }
             else if(astroidSize == 1)
             {
                 //vernietig de astroide
+                gm.updateNumberOfAstroied(-1);
             }
 
 
