@@ -1354,6 +1354,7 @@ MonoBehaviour:
   screenright: 11
   bullet: {fileID: 8046585210038661977, guid: 4f06947fb82f4a34a86c4e8efcb03739, type: 3}
   bulletforce: 200
+  score: 0
   deathforce: 2
   lives: 3
   livestext: {fileID: 2078427920}

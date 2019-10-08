@@ -26,6 +26,9 @@ public class playercontroller : MonoBehaviour
     public GameObject bullet;
     public float bulletforce;
 
+    //score
+    public int score;
+
     //ship leven
     public float deathforce;
     public int lives;
@@ -40,7 +43,7 @@ public class playercontroller : MonoBehaviour
     // Use this for intialization
     private void Start()
     {
-
+        score = 0;
         // update de leven text
         livestext.text = "Lives X" + lives;
     }
@@ -89,6 +92,11 @@ public class playercontroller : MonoBehaviour
     {
         rb.AddRelativeForce(Vector2.up * thrustInput);
         //rb.AddTorque(-turnInput); 
+    }
+
+    void scorepoint(int pointsadd)
+    {
+        score += pointsadd;
     }
 
     void Respawn()
