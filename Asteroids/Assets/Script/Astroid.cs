@@ -43,6 +43,9 @@ public class Astroid : MonoBehaviour
 
         //zoek de script gamemager
         gm = GameObject.FindObjectOfType<GameManager>();
+
+        // find the player
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -106,6 +109,7 @@ public class Astroid : MonoBehaviour
             Destroy(newExplosion, 3f);
             //vernietig nu astroide
             Destroy(gameObject);
+
         }
 
     }
