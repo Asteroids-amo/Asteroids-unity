@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playercontroller : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class playercontroller : MonoBehaviour
     public GameObject explosion;
     public Color inColor;
     public Color normalColor;
+
+    //gameover
+    public GameObject gameoverpanal;
 
     // Use this for intialization
     private void Start()
@@ -123,7 +127,21 @@ public class playercontroller : MonoBehaviour
             if (lives <= 0)
             {
                 //gameover
+                Gameover();
             }
         }
+    }
+
+    // als je dood bent
+    void Gameover()
+    {
+        CancelInvoke();
+        gameoverpanal.SetActive(true);
+    }
+
+    //opnieuw spelen
+    public void playagain()
+    {
+        SceneManager.LoadScene("level");
     }
 }
