@@ -7,6 +7,9 @@ TagManager:
   - Shootable
   - Undefined
   - shoot
+  - background
+  - player
+  - astroid
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - Lighting
   - Ground
   - Postprocessing
-  - 
+  - alien
   - 
   - 
   - 
@@ -49,6 +52,9 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 3305137355
+    locked: 0
+  - name: Alien
+    uniqueID: 1038333365
     locked: 0
   - name: astroied
     uniqueID: 4219040587

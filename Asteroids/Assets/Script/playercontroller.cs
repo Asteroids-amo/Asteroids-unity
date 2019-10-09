@@ -28,6 +28,7 @@ public class playercontroller : MonoBehaviour
 
     //score
     public int score;
+    public Text scoretext;
 
     //ship leven
     public float deathforce;
@@ -44,6 +45,9 @@ public class playercontroller : MonoBehaviour
     private void Start()
     {
         score = 0;
+
+        scoretext.text = "score " + score;
+
         // update de leven text
         livestext.text = "Lives X" + lives;
     }
@@ -97,6 +101,7 @@ public class playercontroller : MonoBehaviour
     void scorepoint(int pointsadd)
     {
         score += pointsadd;
+        scoretext.text = "score " + score;
     }
 
     void Respawn()

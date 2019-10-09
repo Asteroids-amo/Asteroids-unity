@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     {
         levelnummber++;
 
-        for (int i = 0; i < levelnummber*2; i++)
+        for (int i = 0; i < levelnummber*1; i++)
         {
             Vector2 spawn = new Vector2(Random.Range(-12f, 12f),7f);
             Instantiate(asteroidlarge,spawn,Quaternion.identity);
