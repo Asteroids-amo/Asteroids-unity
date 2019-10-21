@@ -18,15 +18,21 @@ public class Leaderboard : MonoBehaviour
     public List<LeaderboardData> leaderboarddata = new List<LeaderboardData>();
     public List<Transform> leaderboarddataEntryTransformList;
     public Text messageText;
+    public Text scoreText;
+    public Text posText;
+    
     public InputField userInput;
-    public InputField scoreInput;
+    public InputField scoreInputField;
     public Button addScoreButton;
+
+    public Text nameText;
+
 
     public void Awake()
     {
 
         GetLeaderboard();
-
+        addHighscoreEntry(1000, "piet");
         SendLeaderboard();
         entryContainer = transform.Find("highscoreEntryContainer");
         entryTemplate = EntryContainer.Find("highscoreEntryTemplate");
@@ -63,11 +69,14 @@ public class Leaderboard : MonoBehaviour
     }
     public void CreateHighscoreEntryTransform(LeaderboardData leaderBoardData, Transform container, List<Transform> transformList)
     {
-        float templateHeight = 20f;
+       
+        float templateHeight = 31f;
         Transform entryTransform = Instantiate(entryTemplate, container);
         RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
         entryRectTransform.anchoredPosition = new Vector2(0, -templateHeight * transformList.Count);
         entryTransform.gameObject.SetActive(true);
+        
+        
 
         int rank = transformList.Count + 1;
         string rankString;
@@ -79,18 +88,24 @@ public class Leaderboard : MonoBehaviour
             case 1: rankString = "1ST"; break;
             case 2: rankString = "2ND"; break;
             case 3: rankString = "3RD"; break;
+            
         }
+        Debug.Log(entryTransform.Find("posText"));
 
-        entryTransform.Find("postext").GetComponent<Text>().text = rankString;
+        entryTransform.Find("posText").GetComponent<Text>().text = rankString;
+        
 
-        int score = leaderBoardData.high_score;
+        string user = leaderBoardData.user;
+        entryTransform.Find("nameText").GetComponent<Text>().text = user;
 
-        entryTransform.Find("scoreText").GetComponent<Text>().text = score.ToString();
+        
 
+        int high_score = leaderBoardData.high_score;
 
-        string name = leaderBoardData.user;
-        entryTransform.Find("nameText").GetComponent<Text>().text = name;
+        entryTransform.Find("scoreText").GetComponent<Text>().text = high_score.ToString();
+        
         transformList.Add(entryTransform);
+
     }
 
 
@@ -118,7 +133,7 @@ public class Leaderboard : MonoBehaviour
     public void addHighscoreEntry(int high_score, string user)
     {
 
-        LeaderboardData leaderboarddatas = new LeaderboardData { high_score = high_score, user = userInput.text };
+        LeaderboardData leaderboarddatas = new LeaderboardData { high_score = high_score, user = user };
         GetLeaderboard();
 
 
