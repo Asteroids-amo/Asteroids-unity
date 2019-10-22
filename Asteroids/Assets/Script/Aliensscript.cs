@@ -24,12 +24,29 @@ public class Aliensscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+     if(Time.time > lastimeshot + shootingdelay)
+        {
+            float angle = Mathf.Atan2(director.y, director.x) * Mathf.Rad2Deg - 90f;
+            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+
+            GameObject newbullet = Instantiate(bullet, transform.position, q);
+
+            newbullet.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0f, bulletspeed));
+            lastimeshot = Time.time;
+        }
     }
 
     private void FixedUpdate()
     {
         director = (player.position - transform.position).normalized;
         rb.MovePosition(rb.position + director * speed * Time.fixedDeltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("bullet"))
+        {
+
+        }
     }
 }

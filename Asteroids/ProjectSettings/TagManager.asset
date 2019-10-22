@@ -10,6 +10,7 @@ TagManager:
   - background
   - player
   - astroid
+  - beam
   layers:
   - Default
   - TransparentFX
@@ -61,4 +62,7 @@ TagManager:
     locked: 0
   - name: Big ban
     uniqueID: 3064005633
+    locked: 0
+  - name: beam
+    uniqueID: 1950180547
     locked: 0

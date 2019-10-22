@@ -122,26 +122,39 @@ public class playercontroller : MonoBehaviour
         GetComponent<SpriteRenderer>().color = normalColor;
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    void life()
+    {
+        lives--;
+        GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(newExplosion, 3f);
+        livestext.text = "Lives X" + lives;
+        //respwan wanneer je dood ben
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        Invoke("Respawn", 3f);
+
+        if (lives <= 0)
+        {
+            //gameover
+            SceneManager.LoadScene("Leaderboard");
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log(col.relativeVelocity.magnitude);
 
         if (col.relativeVelocity.magnitude > deathforce)
         {
-            lives--;
-            GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation);
-            Destroy(newExplosion, 3f);
-            livestext.text = "Lives X" + lives;
-            //respwan wanneer je dood ben
-            GetComponent<SpriteRenderer>().enabled = false;
-            GetComponent<Collider2D>().enabled = false;
-            Invoke("Respawn", 3f);
+            life();
+        }
+    }
 
-            if (lives <= 0)
-            {
-                //gameover
-                SceneManager.LoadScene("Leaderboard");
-            }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("beam"))
+        {
+            life();
         }
     }
 
