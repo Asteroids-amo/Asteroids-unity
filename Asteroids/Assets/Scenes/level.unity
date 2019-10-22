@@ -1575,7 +1575,7 @@ MonoBehaviour:
   score: 0
   scoretext: {fileID: 430117332}
   deathforce: 2
-  lives: 3
+  lives: 1
   livestext: {fileID: 2078427920}
   explosion: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
   inColor: {r: 1, g: 1, b: 1, a: 0.29411766}

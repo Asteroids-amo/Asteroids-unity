@@ -150,11 +150,12 @@ public class playercontroller : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.CompareTag("beam"))
-        {
-            life();
+            if (lives <= 0)
+            {
+                //gameover
+                PlayerPrefs.SetInt("score", score);
+                SceneManager.LoadScene("Entry");
+            }
         }
     }
 

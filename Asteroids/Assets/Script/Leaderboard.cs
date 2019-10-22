@@ -10,6 +10,7 @@ using System.IO;
 using System.Data;
 using System.Text;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class Leaderboard : MonoBehaviour
 {
@@ -20,10 +21,10 @@ public class Leaderboard : MonoBehaviour
     public Text messageText;
     public Text scoreText;
     public Text posText;
-    
-    public InputField userInput;
+
+    public InputField nameInputField;
     public InputField scoreInputField;
-    public Button addScoreButton;
+  
 
     public Text nameText;
 
@@ -32,8 +33,9 @@ public class Leaderboard : MonoBehaviour
     {
 
         GetLeaderboard();
-        addHighscoreEntry(1000, "piet");
+        
         SendLeaderboard();
+        
         entryContainer = transform.Find("highscoreEntryContainer");
         entryTemplate = EntryContainer.Find("highscoreEntryTemplate");
 
@@ -103,9 +105,9 @@ public class Leaderboard : MonoBehaviour
         int high_score = leaderBoardData.high_score;
 
         entryTransform.Find("scoreText").GetComponent<Text>().text = high_score.ToString();
-        
-        transformList.Add(entryTransform);
 
+        transformList.Add(entryTransform);
+       
     }
 
 
@@ -132,17 +134,21 @@ public class Leaderboard : MonoBehaviour
 
     public void addHighscoreEntry(int high_score, string user)
     {
+        
+        
+            LeaderboardData leaderboarddatas = new LeaderboardData { high_score = high_score, user = nameInputField.text };
 
-        LeaderboardData leaderboarddatas = new LeaderboardData { high_score = high_score, user = user };
-        GetLeaderboard();
+            GetLeaderboard();
 
 
 
-        leaderboarddata.Add(leaderboarddatas);
+            leaderboarddata.Add(leaderboarddatas);
 
-        string json = JsonConvert.SerializeObject(leaderboarddata);
+            string json = JsonConvert.SerializeObject(leaderboarddata);
 
-        StartCoroutine(RegisterUser(user, high_score));
+            StartCoroutine(RegisterUser(user, high_score));
+        
+       
 
     }
     IEnumerator RegisterUser(string user, int high_score)
@@ -166,6 +172,8 @@ public class Leaderboard : MonoBehaviour
         }
 
     }
+   
+    
 
     [System.Serializable]
     public class LeaderboardData
