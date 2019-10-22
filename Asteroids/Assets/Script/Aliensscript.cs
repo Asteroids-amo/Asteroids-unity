@@ -10,6 +10,7 @@ public class Aliensscript : MonoBehaviour
     public float speed;
     public float shootingdelay;
     public float lastimeshot = 0f;
+    public float bulletspeed;
 
     public Transform player;
     public GameObject bullet;
@@ -23,14 +24,7 @@ public class Aliensscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > lastimeshot + shootingdelay)
-        {
-            float angle = Mathf.Atan2(director.y, director.x) * Mathf.Rad2Deg - 90;
-            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-
-
-
-        }
+     
     }
 
     private void FixedUpdate()

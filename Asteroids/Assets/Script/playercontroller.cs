@@ -140,7 +140,7 @@ public class playercontroller : MonoBehaviour
             if (lives <= 0)
             {
                 //gameover
-                Gameover();
+                SceneManager.LoadScene("Leaderboard");
             }
         }
     }
