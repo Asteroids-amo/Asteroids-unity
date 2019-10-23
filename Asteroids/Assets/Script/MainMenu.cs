@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public void leaderboardButton()
+    {
+        SceneManager.LoadScene("Leaderboard");
+    }
     public void playEasy()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
