@@ -6,7 +6,15 @@ public class FullScreen : MonoBehaviour
 {
     public void fullScreen()
     {
-        // Toggle fullscreen
-        Screen.fullScreen = !Screen.fullScreen;
+        if (Screen.fullScreen == true)
+        {
+            // Window
+            Screen.SetResolution(1680, 1050, false);
+        }
+        else
+        {
+            // Full
+            Screen.SetResolution(1920, 1080, true);
+        }
     }
 }   
