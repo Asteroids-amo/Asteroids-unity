@@ -6,7 +6,7 @@ public class FullScreen : MonoBehaviour
 {
     public void fullScreen()
     {
-        // Switch to 640 x 480 full-screen
-        Screen.SetResolution(640, 480, true);
+        // Toggle fullscreen
+        Screen.fullScreen = !Screen.fullScreen;
     }
-}
+}   
