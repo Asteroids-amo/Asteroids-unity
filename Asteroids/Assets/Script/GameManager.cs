@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject asteroidlarge;
     public GameObject astroidmedium;
     public GameObject astroidsmall;
+    public GameObject ufored;
 
     public void updateNumberOfAstroied(int change)
     {

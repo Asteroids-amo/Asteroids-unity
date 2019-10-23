@@ -14,6 +14,12 @@ public class Aliensscript : MonoBehaviour
 
     public Transform player;
     public GameObject bullet;
+    public GameObject explosion;
+    public SpriteRenderer spritRenderer;
+    public Collider2D collider;
+    public bool disabled;
+
+    public int points;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +30,12 @@ public class Aliensscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     if(Time.time > lastimeshot + shootingdelay)
+        if (disabled)
+        {
+            return;
+        }
+
+        if(Time.time > lastimeshot + shootingdelay)
         {
             float angle = Mathf.Atan2(director.y, director.x) * Mathf.Rad2Deg - 90f;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -38,15 +49,30 @@ public class Aliensscript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (disabled)
+        {
+            return;
+        }
+
         director = (player.position - transform.position).normalized;
         rb.MovePosition(rb.position + director * speed * Time.fixedDeltaTime);
     }
 
+    void disabel()
+    {
+        collider.enabled = false;
+        spritRenderer.enabled = false;
+        disabled = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("bullet"))
+        if (other.CompareTag("shoot"))
         {
-
+            player.SendMessage("scorepoint", points);
+            GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(newExplosion, 3f);
+            disabel();  
         }
     }
 }

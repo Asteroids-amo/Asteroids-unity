@@ -633,6 +633,11 @@ MonoBehaviour:
   bulletspeed: 250
   player: {fileID: 0}
   bullet: {fileID: 2113583944219888810, guid: 3585bd16ebd497242919d3216c6adbd0, type: 3}
+  explosion: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
+  spritRenderer: {fileID: 964473026}
+  collider: {fileID: 964473024}
+  disabled: 0
+  points: 100
 --- !u!58 &964473024
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -707,7 +712,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1038333365
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e5aaaa712d44537469b7817d934a11d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -844,6 +849,7 @@ RectTransform:
   m_LocalScale: {x: 1.1374999, y: 1.1374999, z: 1.1374999}
   m_Children:
   - {fileID: 1846640134}
+  - {fileID: 1623146306}
   m_Father: {fileID: 2128358879}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1059,6 +1065,7 @@ MonoBehaviour:
     type: 3}
   astroidsmall: {fileID: 8146765666375013220, guid: b32d085f4603e134bb15dad1a02fbd42,
     type: 3}
+  ufored: {fileID: 964473022}
 --- !u!4 &1507739233
 Transform:
   m_ObjectHideFlags: 0
@@ -1101,15 +1108,15 @@ RectTransform:
   m_GameObject: {fileID: 1623146305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1374999, y: 1.1374999, z: 1.1374999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1732379084}
-  m_Father: {fileID: 2128358879}
-  m_RootOrder: 2
+  m_Father: {fileID: 1339590118}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: -52}
+  m_AnchoredPosition: {x: 279.73627, y: 0}
   m_SizeDelta: {x: 140.4, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623146307
@@ -1727,7 +1734,6 @@ RectTransform:
   m_Children:
   - {fileID: 137997394}
   - {fileID: 1339590118}
-  - {fileID: 1623146306}
   m_Father: {fileID: 1716272460}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
