@@ -148,14 +148,11 @@ public class playercontroller : MonoBehaviour
         {
             life();
         }
-    }
-
-            if (lives <= 0)
-            {
-                //gameover
-                PlayerPrefs.SetInt("score", score);
-                SceneManager.LoadScene("Entry");
-            }
+        if (lives <= 0)
+        {
+            //gameover
+            PlayerPrefs.SetInt("score", score);
+            SceneManager.LoadScene("Entry");
         }
     }
 
@@ -171,4 +168,8 @@ public class playercontroller : MonoBehaviour
     {
         SceneManager.LoadScene("level");
     }
+
+
 }
+    
+
