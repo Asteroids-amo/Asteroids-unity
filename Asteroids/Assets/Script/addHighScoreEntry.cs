@@ -28,7 +28,7 @@ public class addHighScoreEntry : MonoBehaviour
     public void submitButton()
     {
         addScore(score, nameInputField.text);
-        SceneManager.LoadScene("level");
+        SceneManager.LoadScene("Gameover");
     }
 
     public void GetLeaderboard()

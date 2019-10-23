@@ -1092,6 +1092,7 @@ GameObject:
   - component: {fileID: 1623146309}
   - component: {fileID: 1623146308}
   - component: {fileID: 1623146307}
+  - component: {fileID: 1623146310}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -1162,9 +1163,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1623146310}
+        m_MethodName: mainmenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1220,6 +1221,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623146305}
   m_CullTransparentMesh: 0
+--- !u!114 &1623146310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623146305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726f76062c2874e448bb47012fb3dd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1716272456
 GameObject:
   m_ObjectHideFlags: 0

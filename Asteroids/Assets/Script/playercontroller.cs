@@ -162,14 +162,6 @@ public class playercontroller : MonoBehaviour
         CancelInvoke();
         gameoverpanal.SetActive(true);
     }
-
-    //opnieuw spelen
-    public void playagain()
-    {
-        SceneManager.LoadScene("level");
-    }
-
-
 }
     
 
