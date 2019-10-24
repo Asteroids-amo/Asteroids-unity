@@ -28,7 +28,9 @@ public class playercontroller : MonoBehaviour
 
     //score
     public int score;
+    public int highscore;
     public Text scoretext;
+    public Text highscoretext;
 
     //ship leven
     public float deathforce;
@@ -44,10 +46,14 @@ public class playercontroller : MonoBehaviour
     // Use this for intialization
     private void Start()
     {
+       
+      
         score = 0;
-
+       
         scoretext.text = "score " + score;
-
+        highscoretext.text = "high-score:" + highscore;
+        Debug.Log(PlayerPrefs.GetInt("highscore"));
+        highscoretext.text = "high-score " + PlayerPrefs.GetInt("highscore");
         // update de leven text
         livestext.text = "Lives X" + lives;
     }
@@ -56,6 +62,13 @@ public class playercontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(score > highscore)
+        {
+            highscore = score;
+        }
+
+          
         thrustInput = Input.GetAxis("Vertical");
         turnInput = Input.GetAxis("Horizontal");
 
@@ -102,6 +115,8 @@ public class playercontroller : MonoBehaviour
     {
         score += pointsadd;
         scoretext.text = "score " + score;
+
+
     }
 
     void Respawn()
@@ -152,6 +167,14 @@ public class playercontroller : MonoBehaviour
         {
             //gameover
             PlayerPrefs.SetInt("score", score);
+            PlayerPrefs.SetInt("highscore", highscore);
+            if (PlayerPrefs.GetInt("highscore") < PlayerPrefs.GetInt("score"))
+            {
+                PlayerPrefs.SetInt("highscore", score);
+            }
+            
+
+            
             SceneManager.LoadScene("Entry");
         }
     }

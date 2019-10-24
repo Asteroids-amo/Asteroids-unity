@@ -4042,7 +4042,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: INSTRUCTIONS
+  m_Text: 'LEaderboard
+
+'
 --- !u!222 &2115739547
 CanvasRenderer:
   m_ObjectHideFlags: 0

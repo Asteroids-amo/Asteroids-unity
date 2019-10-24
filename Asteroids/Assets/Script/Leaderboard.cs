@@ -172,7 +172,10 @@ public class Leaderboard : MonoBehaviour
         }
 
     }
-   
+   public void backButton()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
     
 
     [System.Serializable]
